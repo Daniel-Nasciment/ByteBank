@@ -6,19 +6,19 @@ fun main() {
     val contaDaniel = Conta()
     contaDaniel.titular = "Daniel"
     contaDaniel.conta = 12345
-    contaDaniel.saldo = 200.0
+    contaDaniel.setSaldo(200.0)
 
     contaDaniel.deposito(800.0)
 
     val contaMarco = Conta()
     contaMarco.titular = "Marco"
     contaMarco.conta = 54321
-    contaMarco.saldo = 300.0
+    contaMarco.setSaldo(300.0)
 
     contaDaniel.transferencia(500.0, contaMarco)
 
-    println(contaDaniel.saldo)
-    println(contaMarco.saldo)
+    println(contaDaniel.getSaldo())
+    println(contaMarco.getSaldo())
 
 }
 
@@ -26,7 +26,17 @@ fun main() {
 class Conta {
     var titular = ""
     var conta = 0
-    var saldo = 0.0
+    private var saldo = 0.0
+
+    fun getSaldo(): Double {
+        return this.saldo
+    }
+
+    fun setSaldo(valor: Double) {
+        if (valor > 0) {
+            this.saldo = valor
+        }
+    }
 
     fun deposito(valor: Double) {
         this.saldo += valor
@@ -45,7 +55,7 @@ class Conta {
     fun transferencia(valor: Double, destino: Conta): Boolean {
         if (this.saldo >= valor) {
             this.saldo -= valor
-            destino.saldo += valor
+            destino.deposito(valor)
             return true
         }
         return false
