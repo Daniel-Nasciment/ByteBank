@@ -6,19 +6,19 @@ fun main() {
     val contaDaniel = Conta()
     contaDaniel.titular = "Daniel"
     contaDaniel.conta = 12345
-    contaDaniel.setSaldo(200.0)
+    contaDaniel.deposito(200.0)
 
     contaDaniel.deposito(800.0)
 
     val contaMarco = Conta()
     contaMarco.titular = "Marco"
     contaMarco.conta = 54321
-    contaMarco.setSaldo(300.0)
+    contaMarco.deposito(300.0)
 
     contaDaniel.transferencia(500.0, contaMarco)
 
-    println(contaDaniel.getSaldo())
-    println(contaMarco.getSaldo())
+    println(contaDaniel.saldo)
+    println(contaMarco.saldo)
 
 }
 
@@ -26,17 +26,15 @@ fun main() {
 class Conta {
     var titular = ""
     var conta = 0
-    private var saldo = 0.0
 
-    fun getSaldo(): Double {
-        return this.saldo
-    }
-
-    fun setSaldo(valor: Double) {
-        if (valor > 0) {
-            this.saldo = valor
+    // POR PADRÃO NO KOTLIN JÁ É ENCAPSULADO OS GETTERS E SETTERS
+    var saldo = 0.0
+        private set(valor) {
+            if (valor > 0) {
+                // FIELD SERIA O VALOR DO SALDO
+                field = valor
+            }
         }
-    }
 
     fun deposito(valor: Double) {
         this.saldo += valor
