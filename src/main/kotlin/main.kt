@@ -1,9 +1,18 @@
 fun main() {
     println("Bem vindo ao ByteBank")
+
+    //ISSO É UMA VARIÁVEL QUE REFERENCIA UM OBETO DO TIPO CONTA
     val conta = Conta()
     conta.titular = "Daniel"
     conta.conta = 12345
     conta.saldo = 200.0
+
+    //NO EXEMPLO ABAIXO EU NÃO FACO A REFERÊNCIA A UM NOVO OBJETO
+    //MAS SIM EM UM OBJETO JÁ EXISTENTE
+
+    /*val contaMarco = conta
+    contaMarco.titular = "Marco"
+    println(contaMarco.titular)*/
 
     println(conta.titular)
     println(conta.conta)
