@@ -1,8 +1,6 @@
 fun main() {
     println("Bem vindo ao ByteBank")
 
-    // TODA VARIÁVEL PRECISA SER INICIALIZADA
-
     val titular = "Daniel"
     val numeroConta = 12345
     var saldo = 0.0
@@ -13,4 +11,13 @@ fun main() {
     println("Saldo: $saldo")
 
 
+    // IF E WHEN SÃO EQUIVALENTES
+
+    if (saldo > 0.0){
+        println("Conta positiva!")
+    }
+
+    when {
+        saldo == 0.0 -> println("Conta neutra!")
+    }
 }
