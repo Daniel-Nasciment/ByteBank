@@ -1,11 +1,16 @@
 fun main() {
     println("Bem vindo ao ByteBank")
 
-    // VAR -> PERMITE MODIFICAÇÃO
-    // VAL -> NÃO PODE SER MODIFICADA
+    // TODA VARIÁVEL PRECISA SER INICIALIZADA
 
-   val titular = "Daniel"
+    val titular = "Daniel"
+    val numeroConta = 12345
+    var saldo = 0.0
+    saldo = 100.0
 
     println("Titular: $titular")
+    println("Número da conta: $numeroConta")
+    println("Saldo: $saldo")
+
 
 }
