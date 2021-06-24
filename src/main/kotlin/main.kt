@@ -3,26 +3,53 @@ fun main() {
 
     //ISSO É UMA VARIÁVEL QUE REFERENCIA UM OBETO DO TIPO CONTA
     //ISSO É UMA VARIÁVEL QUE REFERENCIA UM OBETO DO TIPO CONTA
-    val conta = Conta()
-    conta.titular = "Daniel"
-    conta.conta = 12345
-    conta.saldo = 200.0
+    val contaDaniel = Conta()
+    contaDaniel.titular = "Daniel"
+    contaDaniel.conta = 12345
+    contaDaniel.saldo = 200.0
 
-    deposito(conta, 800.0)
+    contaDaniel.deposito(800.0)
 
-    println(conta.titular)
-    println(conta.conta)
-    println(conta.saldo)
+    val contaMarco = Conta()
+    contaMarco.titular = "Marco"
+    contaMarco.conta = 54321
+    contaMarco.saldo = 300.0
+
+    contaDaniel.transferencia(500.0, contaMarco)
+
+    println(contaDaniel.saldo)
+    println(contaMarco.saldo)
+
 }
 
-fun deposito(conta: Conta, valor: Double){
-    conta.saldo += valor
-}
 
 class Conta {
     var titular = ""
     var conta = 0
     var saldo = 0.0
+
+    fun deposito(valor: Double) {
+        this.saldo += valor
+    }
+
+    fun saque(valor: Double) {
+
+        if (this.saldo < valor) {
+            println("Você não possui saldo suficiente!")
+        } else {
+            this.saldo -= valor
+        }
+    }
+
+    // PARA DEFINIR O RETORNO DE UMA FUNÇÃO:
+    fun transferencia(valor: Double, destino: Conta): Boolean {
+        if (this.saldo >= valor) {
+            this.saldo -= valor
+            destino.saldo += valor
+            return true
+        }
+        return false
+    }
 }
 
 fun testaCondicoes(saldo: Double) {
