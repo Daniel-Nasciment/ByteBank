@@ -1,17 +1,19 @@
 fun main() {
     println("Bem vindo ao ByteBank")
+    val conta = Conta()
+    conta.titular = "Daniel"
+    conta.conta = 12345
+    conta.saldo = 200.0
 
-    val titular = "Daniel"
-    val numeroConta = 12345
+    println(conta.titular)
+    println(conta.conta)
+    println(conta.saldo)
+}
+
+class Conta {
+    var titular = ""
+    var conta = 0
     var saldo = 0.0
-    saldo = 100.0
-
-    println("Titular: $titular")
-    println("Número da conta: $numeroConta")
-    println("Saldo: $saldo")
-
-    testaCondicoes(saldo)
-
 }
 
 fun testaCondicoes(saldo: Double) {
