@@ -2,21 +2,21 @@ fun main() {
     println("Bem vindo ao ByteBank")
 
     //ISSO É UMA VARIÁVEL QUE REFERENCIA UM OBETO DO TIPO CONTA
+    //ISSO É UMA VARIÁVEL QUE REFERENCIA UM OBETO DO TIPO CONTA
     val conta = Conta()
     conta.titular = "Daniel"
     conta.conta = 12345
     conta.saldo = 200.0
 
-    //NO EXEMPLO ABAIXO EU NÃO FACO A REFERÊNCIA A UM NOVO OBJETO
-    //MAS SIM EM UM OBJETO JÁ EXISTENTE
-
-    /*val contaMarco = conta
-    contaMarco.titular = "Marco"
-    println(contaMarco.titular)*/
+    deposito(conta, 800.0)
 
     println(conta.titular)
     println(conta.conta)
     println(conta.saldo)
+}
+
+fun deposito(conta: Conta, valor: Double){
+    conta.saldo += valor
 }
 
 class Conta {
@@ -36,7 +36,7 @@ fun testaCondicoes(saldo: Double) {
     }
 
     var i = 0
-    while (i < 10){
+    while (i < 10) {
         i++
         println(i)
     }
