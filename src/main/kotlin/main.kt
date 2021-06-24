@@ -10,14 +10,36 @@ fun main() {
     println("Número da conta: $numeroConta")
     println("Saldo: $saldo")
 
+    testaCondicoes(saldo)
 
-    // IF E WHEN SÃO EQUIVALENTES
+}
 
-    if (saldo > 0.0){
+fun testaCondicoes(saldo: Double) {
+
+    if (saldo > 0.0) {
         println("Conta positiva!")
     }
 
     when {
         saldo == 0.0 -> println("Conta neutra!")
     }
+
+    var i = 0
+    while (i < 10){
+        i++
+        println(i)
+    }
+
+
+//    for (i in 0..3) {
+//        println(i)
+//    }
+//
+//    for (i in 4 downTo 0 step 2) {
+//        // DOWNTO - DE TRAZ PARA FRENTE
+//        // STEP - DE 2 EM 2
+//        println(i)
+//        println()
+//    }
+
 }
