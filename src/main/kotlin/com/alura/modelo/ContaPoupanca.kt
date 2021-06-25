@@ -1,7 +1,7 @@
 package com.alura.modelo
 
 class ContaPoupanca(
-    titular: String,
+    titular: Cliente,
     conta: Int
 ) : Conta(
     titular = titular,

@@ -1,8 +1,23 @@
+import com.alura.modelo.Cliente
 import com.alura.modelo.ContaCorrente
 import com.alura.modelo.ContaPoupanca
 
 fun testaComportamentosConta() {
-    val contaDaniel = ContaCorrente("Daniel", 12345)
+
+    val daniel = Cliente(
+        "Daniel",
+        "111.111.111-11",
+        12345
+    )
+
+    val marco = Cliente(
+        "Marco",
+        "222.222.222-22",
+        12345
+    )
+
+
+    val contaDaniel = ContaCorrente(daniel, 12345)
     contaDaniel.deposito(1000.0)
 
     contaDaniel.saque(200.0)
@@ -10,7 +25,7 @@ fun testaComportamentosConta() {
 
     contaDaniel.deposito(800.0)
 
-    val contaMarco = ContaPoupanca("Marco", 54321)
+    val contaMarco = ContaPoupanca(marco, 54321)
     contaMarco.deposito(300.0)
 
     contaDaniel.transferencia(500.0, contaMarco)

@@ -1,10 +1,11 @@
 package com.alura.modelo
 
-abstract class Conta(val titular: String, val conta: Int) {
+abstract class Conta(
+    val titular: Cliente,
+    val conta: Int
+) {
     var saldo = 0.0
         protected set
-// QUANDO A CLASSE SE TORNA ABSTRATA, DEVE DEFINIR O SETER DO CAMPO QUE SERA ALTERADO COMO
-// PROTECTED
 
     fun deposito(valor: Double) {
         this.saldo += valor
