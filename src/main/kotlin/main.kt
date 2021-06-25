@@ -1,31 +1,29 @@
 fun main() {
 
-    var daniel = Funcionario(
-        nome = "Daniel",
-        cpf = "111.111.111-11",
-        salario = 1000.0
+    // UTILIZANDO HERANÇA
+    var contaCorrente = ContaCorrente(
+        titular = "Daniel",
+        conta = 12345
     )
 
-    var marco = Gerente(
-        nome = "Marco",
-        cpf = "222.222.222-22",
-        salario = 2000.0,
-        senha = 12345
+    // UTILIZANDO HERANÇA
+    var contaPoupanca = ContaPoupanca(
+        titular = "Marco",
+        conta = 54321
     )
 
-    var nicolas = Diretor(
-        nome = "Nicolas",
-        cpf = "333.333.333-33",
-        salario = 4000.0,
-        senha = 12345,
-        plr = 100.0
-    )
+    contaCorrente.deposito(1000.0)
+    contaPoupanca.deposito(1000.0)
 
-    var calculadora = CalculadoraBonificacao()
+    println("Saldo corrente antes do saque: ${contaCorrente.saldo}")
 
-    calculadora.registraFuncionario(daniel)
-    calculadora.registraGerente(marco)
-    calculadora.registraDiretor(nicolas)
 
-    println("Total de bonificação: ${calculadora.total}")
+    contaCorrente.saque(100.0)
+    println("Saldo corrente após o saque: ${contaCorrente.saldo}")
+
+    // UTILIZAÇÃO DO POLIMORFISMO
+    contaPoupanca.transferencia(200.0, contaCorrente)
+    println("Saldo pupança após transferência: ${contaPoupanca.saldo}")
+    println("Saldo corrente após o transferencia: ${contaCorrente.saldo}")
+
 }

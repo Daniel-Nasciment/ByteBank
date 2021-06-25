@@ -1,4 +1,4 @@
-class Conta(val titular: String, val conta: Int) {
+open class Conta(val titular: String, val conta: Int) {
     var saldo = 0.0
         private set
 
@@ -6,7 +6,7 @@ class Conta(val titular: String, val conta: Int) {
         this.saldo += valor
     }
 
-    fun saque(valor: Double) {
+   open fun saque(valor: Double) {
 
         if (this.saldo < valor) {
             println("Você não possui saldo suficiente!")
