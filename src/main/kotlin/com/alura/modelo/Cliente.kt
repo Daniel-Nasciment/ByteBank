@@ -1,11 +1,9 @@
 package com.alura.modelo
 
-
-// AO FAZER UM IMPORT ONDE AS CLASSES POSSUEM O MESMO NOME É NECESSÁRIO A UTILIZAÇÃO DO 'AS'
-
 class Cliente(
     val nome: String,
     val cpf: String,
+    var endereco: Endereco = Endereco(),
     val senha: Int
 ) : Autenticavel {
 

@@ -5,15 +5,15 @@ import com.alura.modelo.ContaPoupanca
 fun testaComportamentosConta() {
 
     val daniel = Cliente(
-        "Daniel",
-        "111.111.111-11",
-        12345
+        nome ="Daniel",
+        cpf = "111.111.111-11",
+        senha = 12345
     )
 
     val marco = Cliente(
-        "Marco",
-        "222.222.222-22",
-        12345
+        nome ="Marco",
+        cpf = "222.222.222-22",
+        senha =12345
     )
 
 

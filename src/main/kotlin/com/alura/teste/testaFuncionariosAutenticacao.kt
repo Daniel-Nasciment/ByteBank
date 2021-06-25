@@ -21,9 +21,9 @@ fun testaFuncionariosAutenticacao() {
     )
 
     var nicolas = Cliente(
-        "Daniel",
-        "222.222.222-22",
-        12345
+        nome ="Daniel",
+        cpf ="222.222.222-22",
+        senha = 12345
     )
 
 
