@@ -1,3 +1,5 @@
+package com.alura.modelo
+
 class Gerente(
     nome: String,
     cpf: String,

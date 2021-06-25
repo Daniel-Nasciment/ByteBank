@@ -1,3 +1,5 @@
+package com.alura.modelo
+
 class CalculadoraBonificacao {
 
     var total: Double = 0.0

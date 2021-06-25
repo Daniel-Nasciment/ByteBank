@@ -1,3 +1,5 @@
+package com.alura.modelo
+
 class ContaCorrente(
     titular: String,
     conta: Int

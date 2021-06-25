@@ -1,3 +1,5 @@
+package com.alura.modelo
+
 // ABSTRACT É AUTOMATICAMENTE UMA CLASSE OPEN -> HABILITADA PARA HERANÇA
 abstract class Funcionario(
     val nome: String,

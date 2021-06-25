@@ -1,3 +1,8 @@
+import com.alura.modelo.Cliente
+import com.alura.modelo.Diretor
+import com.alura.modelo.Gerente
+import com.alura.modelo.SistemaInterno
+
 fun testaFuncionariosAutenticacao() {
 
     var daniel = Gerente(

@@ -1,3 +1,5 @@
+package com.alura.modelo
+
 class SistemaInterno {
 
     fun entra(admin: Autenticavel, senha: Int){

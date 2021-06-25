@@ -1,3 +1,5 @@
+package com.alura.modelo
+
 interface Autenticavel {
 
     // É POSSIVEL REALIZAR A IMPLEMENTAÇÃO DO MÉTODO DENTRO DA INTERFACE

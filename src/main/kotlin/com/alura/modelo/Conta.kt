@@ -1,3 +1,5 @@
+package com.alura.modelo
+
 abstract class Conta(val titular: String, val conta: Int) {
     var saldo = 0.0
         protected set

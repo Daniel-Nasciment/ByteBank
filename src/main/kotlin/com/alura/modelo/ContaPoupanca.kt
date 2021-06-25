@@ -1,3 +1,5 @@
+package com.alura.modelo
+
 class ContaPoupanca(
     titular: String,
     conta: Int

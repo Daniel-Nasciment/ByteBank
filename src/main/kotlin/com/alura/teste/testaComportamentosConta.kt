@@ -1,3 +1,6 @@
+import com.alura.modelo.ContaCorrente
+import com.alura.modelo.ContaPoupanca
+
 fun testaComportamentosConta() {
     val contaDaniel = ContaCorrente("Daniel", 12345)
     contaDaniel.deposito(1000.0)
