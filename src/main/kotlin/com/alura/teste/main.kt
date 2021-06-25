@@ -2,26 +2,21 @@ import com.alura.modelo.Endereco
 
 fun main() {
 
-    // CONSTRUÇÃO DE UM ARRAY
-    val idades = intArrayOf(20, 21, 22, 23, 24)
+    val salarios = doubleArrayOf(200.0, 300.0, 400.0, 500.0, 600.0)
 
-    var maiorIdade = 0
-    // PERCORRENDO COM FOR NORMAL
-    for (idade in idades){
-        if (idade > maiorIdade){
-            maiorIdade = idade
-        }
+    var aumento = 1.1
+    var indice = 0
+
+    for (salario in salarios){
+        salarios[indice] = salario * aumento
+        indice++
     }
 
-    println(maiorIdade)
-
-    var menorIdade = Int.MAX_VALUE
-    // PERCORRENDO COM FOREACH
-    idades.forEach { idade ->
-        if (idade < menorIdade) menorIdade = idade
+    for (indice in salarios.indices){
+        salarios[indice] = salarios[indice] * aumento
     }
 
-    println(menorIdade)
+    println(salarios.indices)
 
 }
 
