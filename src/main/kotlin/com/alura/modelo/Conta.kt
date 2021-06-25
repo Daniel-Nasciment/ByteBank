@@ -1,9 +1,5 @@
 package com.alura.modelo
 
-// ESSA ABORADAGEM N É RECOMENDADA
-// NESSE EXEMPLO SE EU TIVESSE OUTRAS CLASSES DENTRO DESSE ARQUIVO EU CONSEGUIRIA EFETUAR
-// A ALTERAÇÃO NO CONTADOR
-
 var totalContas = 0
     private set
 
@@ -14,8 +10,6 @@ abstract class Conta(
     var saldo = 0.0
         protected set
 
-    // OBJECT DECLARATION - COMPANION -> SIGNIFICA QUE FAZ PARTE DA CLASSE
-    // NÃO É NECESSÁRIO DEFINIR NOME, POR PADRÃO VEM IMPLICITO COMO COMPANION
    companion object Contador{
         var total = 0
             private set
