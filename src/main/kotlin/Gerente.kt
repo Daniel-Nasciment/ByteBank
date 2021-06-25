@@ -9,8 +9,8 @@ class Gerente(
     salario = salario
 ) {
 
-    // SOBRESCRITA DE MÉTODOS
-    override val bonificacao: Double get() = super.bonificacao + salario
+    override val bonificacao: Double
+        get() = salario * 0.2
 
 
     fun autenticacao(senha: Int): Boolean {

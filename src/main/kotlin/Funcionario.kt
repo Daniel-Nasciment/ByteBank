@@ -5,5 +5,7 @@ abstract class Funcionario(
     var salario: Double
 
 ) {
-    open val bonificacao: Double get() = salario * 0.1
+    // AO DEFINIR UM COMPORTAMENTO ABSTRATO
+    // CADA FILHO TERA SUA PRÓPRIA IMPLEMENTAÇÃO *OBRIGATÓRIA*
+    abstract val bonificacao: Double
 }
