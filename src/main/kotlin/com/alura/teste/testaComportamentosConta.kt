@@ -29,7 +29,7 @@ fun testaComportamentosConta() {
     val contaMarco = ContaPoupanca(marco, 54321)
     contaMarco.deposito(300.0)
 
-    contaDaniel.transferencia(1000.0, contaMarco)
+    contaDaniel.transferencia(1000.0, contaMarco, 12345)
     println(contaDaniel.saldo)
 
     //println(contaDaniel.saldo)
