@@ -19,19 +19,21 @@ fun testaComportamentosConta() {
 
     val contaDaniel = ContaCorrente(daniel, 12345)
     contaDaniel.deposito(1000.0)
+    println(contaDaniel.saldo)
 
-    contaDaniel.saque(200.0)
-    println("Valor após saque: ${contaDaniel.saldo}")
+    //contaDaniel.saque(200.0)
+    //println("Valor após saque: ${contaDaniel.saldo}")
 
-    contaDaniel.deposito(800.0)
+    //contaDaniel.deposito(800.0)
 
     val contaMarco = ContaPoupanca(marco, 54321)
     contaMarco.deposito(300.0)
 
-    contaDaniel.transferencia(500.0, contaMarco)
-
+    contaDaniel.transferencia(1000.0, contaMarco)
     println(contaDaniel.saldo)
-    println(contaMarco.saldo)
+
+    //println(contaDaniel.saldo)
+    //println(contaMarco.saldo)
 
 
 }

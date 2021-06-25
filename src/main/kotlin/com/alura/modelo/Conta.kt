@@ -1,5 +1,7 @@
 package com.alura.modelo
 
+import com.alura.exception.SaldoInsufucienteException
+
 var totalContas = 0
     private set
 
@@ -27,12 +29,11 @@ abstract class Conta(
 
    abstract fun saque(valor: Double)
 
-    fun transferencia(valor: Double, destino: Conta): Boolean {
-        if (this.saldo >= valor) {
-            this.saldo -= valor
-            destino.deposito(valor)
-            return true
+    fun transferencia(valor: Double, destino: Conta){
+        if (this.saldo < valor){
+            throw SaldoInsufucienteException()
         }
-        return false
+        this.saldo -= valor
+        destino.deposito(valor)
     }
 }
