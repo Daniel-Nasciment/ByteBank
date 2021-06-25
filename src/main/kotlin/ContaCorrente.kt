@@ -8,7 +8,9 @@ class ContaCorrente(
 
     override fun saque(valor: Double) {
         val valorComTaxa = 0.1
-        super.saque(valor + valorComTaxa)
+        if(this.saldo >= valor){
+            this.saldo -= (valor + valorComTaxa)
+        }
     }
 
 }
