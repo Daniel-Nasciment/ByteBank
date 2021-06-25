@@ -6,6 +6,6 @@ fun main() {
         salario = 1000.0
     )
 
-    println("Salario: ${daniel.bonificacao()}")
+    println("Salario: ${daniel.bonificacao}")
 
 }
