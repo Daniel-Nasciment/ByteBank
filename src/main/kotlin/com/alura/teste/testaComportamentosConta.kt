@@ -1,3 +1,5 @@
+import com.alura.exception.FalhaAutenticacaoException
+import com.alura.exception.SaldoInsufucienteException
 import com.alura.modelo.Cliente
 import com.alura.modelo.ContaCorrente
 import com.alura.modelo.ContaPoupanca
@@ -29,8 +31,17 @@ fun testaComportamentosConta() {
     val contaMarco = ContaPoupanca(marco, 54321)
     contaMarco.deposito(300.0)
 
-    contaDaniel.transferencia(1000.0, contaMarco, 12345)
-    println(contaDaniel.saldo)
+    try {
+        contaDaniel.transferencia(1000.0, contaMarco, 12345)
+    }catch (e: SaldoInsufucienteException){
+        e.message
+    }catch (e: FalhaAutenticacaoException){
+        e.message
+        // NESSE CASO O ULTIMO CATCH REPRESENTA UMA EXCEÇÃO A QUAL NÃO CONHECEMOS
+    }catch (e: Exception){
+        println("Erro desconhecido")
+        e.message
+    }
 
     //println(contaDaniel.saldo)
     //println(contaMarco.saldo)
