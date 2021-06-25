@@ -14,10 +14,17 @@ abstract class Conta(
     var saldo = 0.0
         protected set
 
+    // OBJECT DECLARATION - COMPANION -> SIGNIFICA QUE FAZ PARTE DA CLASSE
+    // NÃO É NECESSÁRIO DEFINIR NOME, POR PADRÃO VEM IMPLICITO COMO COMPANION
+   companion object Contador{
+        var total = 0
+            private set
+
+    }
 
     init {
-        println("Nova conta criada")
-        totalContas++
+        println("Criando conta")
+        Contador.total++
     }
 
     fun deposito(valor: Double) {
