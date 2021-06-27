@@ -1,22 +1,47 @@
-import com.alura.modelo.Endereco
-
 fun main() {
 
-    val salarios = doubleArrayOf(200.0, 300.0, 400.0, 500.0, 600.0)
+    val series: IntRange = 1.rangeTo(10)
 
-    var aumento = 1.1
-    var indice = 0
-
-    for (salario in salarios){
-        salarios[indice] = salario * aumento
-        indice++
+    for (s in series){
+        print("${s} ")
     }
 
-    for (indice in salarios.indices){
-        salarios[indice] = salarios[indice] * aumento
+
+    println()
+
+    // A DECLARAÇÃO A CIMA É A MESMA QUE:
+
+    // SETEP -> VAI SER CONTADO DE 2 EM 2
+    // 0.until(10) -> Não inclusiva, ou seja, não vai até o 10
+    
+    val numeros = 1..10 step 2
+    // DENTRO DO FOR -> O IN ATRIBUI A VARIAVEL NUMERO CADA ITEM DE NUMEROS
+    for (numero in numeros){
+        print("${numero} ")
     }
 
-    println(salarios.indices)
+
+    // DECRECENTE
+
+    println()
+
+    val decrescentes = 10 downTo 0 step 2
+
+    decrescentes.forEach { print("${it} ") }
+
+
+    println()
+
+
+    val intervalo = 1000.0..5000.0
+    val salario = 3500.0
+
+    // DENTRO DO IF -> O IN VERIFICA SE TAL VALOR ESTÁ DENTRO DO INTERVALO
+    if(salario in intervalo){
+        println("True")
+    }else{
+        println("False")
+    }
 
 }
 
