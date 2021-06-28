@@ -32,8 +32,15 @@ fun main() {
     )
 
     // LIDANDO COM NULOS
-    val listaLivros = mutableListOf<Livro?>(livro1, null, livro2, livro3, null)
-    listaLivros.imprimeMarcadores()
+    val listaLivros = mutableListOf<Livro>(livro1, livro2, livro3)
+    // ELVIS OPERATOR ?: -> ME DA A CONDIÇÃO DE ALTERAR O VALOR QUANDO O VALOR DA ESQUERDA FOR NULL
+    listaLivros.groupBy { it.editora ?: "Editora desconhecida"}
+        .forEach{
+            //EDITORA = CHAVE DO MAPA
+            //LIVROS = CONTEUDO DO MAPA
+            (editora: String?, livros: List<Livro>) ->
+            println("${editora}: ${livros.joinToString { it.titulo }}")
+        }
 }
 
 fun List<Livro?>.imprimeMarcadores() {
