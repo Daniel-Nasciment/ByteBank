@@ -3,11 +3,18 @@ package com.alura.teste
 
 fun main() {
 
-    val minhaFuncao: () -> Unit = ::teste
-    println(minhaFuncao())
+    val minhaFuncaoLambda: () -> Unit = {
+        println("Retornando função LAMBDA")
+    }
 
-    val minhaFuncaoClasse = Teste()
-    println(minhaFuncaoClasse())
+    println(minhaFuncaoLambda())
+
+    val minhaFuncaoAnonima: () -> Unit = fun(){
+        println("Retornando função anonima")
+    }
+
+    println(minhaFuncaoAnonima())
+
 }
 
 fun teste(){
