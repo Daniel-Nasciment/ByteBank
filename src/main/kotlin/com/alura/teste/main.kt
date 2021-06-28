@@ -23,6 +23,11 @@ fun main() {
     // NO CASO DO BIG DECIMAL SERIA NECESSÁRIO A CRIAÇÃO DE UM MÉTODO QUE FAÇA O MESMO
 
     println("${salarios.somatoria()}")
+    val gastoTotal = salariosComAumento.fold(salariosComAumento.somatoria()) { acumulador, salario ->
+        acumulador + salario * 6.toBigDecimal().setScale(2, RoundingMode.UP)
+    }
+
+    println(gastoTotal)
 
 }
 
@@ -44,7 +49,7 @@ fun bigDecimalArrayOf(vararg valores: String): Array<BigDecimal> {
     }
 }
 
-fun Array<BigDecimal>.somatoria(): BigDecimal{
+fun Array<BigDecimal>.somatoria(): BigDecimal {
 
     return this.reduce { acumulador, valor ->
         acumulador + valor
