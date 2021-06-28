@@ -31,20 +31,15 @@ fun main() {
         editora = "Editora teste"
     )
 
-
-    val listaLivros = mutableListOf<Livro>(livro1, livro2, livro3)
-    val ordenado = listaLivros.sortedBy { it.anoPublic }
-    ordenado.imprimeMarcadores()
-
-    // STARTSWITH -> STRING INICIADA EM:
-    listaLivros.filter { it.autor.startsWith("A") }
-        .sortedBy { it.anoPublic }
-        .imprimeMarcadores()
-
+    // LIDANDO COM NULOS
+    val listaLivros = mutableListOf<Livro?>(livro1, null, livro2, livro3, null)
+    listaLivros.imprimeMarcadores()
 }
 
-fun List<Livro>.imprimeMarcadores() {
-    val textoFormatado = this.joinToString(separator = "\n") {
+fun List<Livro?>.imprimeMarcadores() {
+    val textoFormatado = this
+        .filterNotNull()
+        .joinToString(separator = "\n") {
         " - ${it.titulo} de ${it.autor}"
     }
     println("### Lista de Livros ### \n$textoFormatado")
