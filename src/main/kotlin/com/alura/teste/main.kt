@@ -17,7 +17,17 @@ fun main() {
             "${endereco.logradouro}, ${endereco.numero}".toUpperCase()
         }
         .let (::println)
+
+    soma(1, 1){
+        println(it)
+    }
 }
+
+fun soma(a: Int, b: Int, resultado: (Int) -> Unit){
+    // lazy evaluation -> só vai ser executado se houver chamada
+    resultado(a + b)
+}
+
 
 
 
