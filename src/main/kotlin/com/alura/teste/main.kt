@@ -6,7 +6,7 @@ import java.math.RoundingMode
 fun main() {
 
     // COMO É UM ARRAY NÃO PRIMITIVO DA LINGUAGEM DEVEMOS SETAR OS VALORES DE INICIALIZAÇÃO
-    val salarios = bigDecimalArrayOf("1500.0", "2050.45")
+    val salarios = bigDecimalArrayOf("1500.0", "2050.45", "5000.0", "2300.0")
 
     // CONTENT TOSTRING RETORNA A STRING DO ARRAY
     println(salarios.contentToString())
@@ -19,15 +19,22 @@ fun main() {
 
     println(salariosComAumento.contentToString())
 
-    //ASSIM COMO NOS TIPOS PRIMITIVOS POSSIMOS COMO POR EXEMPLO UM IntArrayOf
-    // NO CASO DO BIG DECIMAL SERIA NECESSÁRIO A CRIAÇÃO DE UM MÉTODO QUE FAÇA O MESMO
 
-    println("${salarios.somatoria()}")
-    val gastoTotal = salariosComAumento.fold(salariosComAumento.somatoria()) { acumulador, salario ->
-        acumulador + salario * 6.toBigDecimal().setScale(2, RoundingMode.UP)
-    }
+    // DO MENOR PARA O MAIOR
 
-    println(gastoTotal)
+    /*val salariosOrdenados = salariosComAumento.sorted()
+    val tresUltimosSalarios: Array<BigDecimal> = salariosOrdenados.takeLast(3).toTypedArray()
+    val media = tresUltimosSalarios.media()*/
+
+    val media = salariosComAumento
+        .sorted()
+        .takeLast(3)
+        .toTypedArray()
+        .media()
+
+
+    println(media)
+
 
 }
 
@@ -53,6 +60,14 @@ fun Array<BigDecimal>.somatoria(): BigDecimal {
 
     return this.reduce { acumulador, valor ->
         acumulador + valor
+    }
+}
+
+fun Array<BigDecimal>.media(): BigDecimal {
+    return if (this.isEmpty()) {
+        BigDecimal.ZERO
+    } else {
+        this.somatoria() / this.size.toBigDecimal()
     }
 }
 
