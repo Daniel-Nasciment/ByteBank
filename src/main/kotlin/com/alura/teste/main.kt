@@ -15,8 +15,14 @@ fun main() {
     val pedidosMapeados: Map<Int, Pedido> = pedidos.associateBy { pedido -> pedido.numero }
     val pedidosFrete: Map<Pedido, Boolean> = pedidos.associateWith { pedido -> pedido.valor > 50.0 }
 
+    val pedidosFreteGratisAgrupado: Map<Boolean, List<Pedido>> =
+        pedidos.groupBy { pedido: Pedido ->
+            pedido.valor > 50.0
+        }
+
     println(pedidosMapeados)
     println(pedidosFrete)
+    println(pedidosFreteGratisAgrupado[true])
 }
 
 
