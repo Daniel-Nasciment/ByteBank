@@ -36,6 +36,11 @@ fun main() {
     val ordenado = listaLivros.sortedBy { it.anoPublic }
     ordenado.imprimeMarcadores()
 
+    // STARTSWITH -> STRING INICIADA EM:
+    listaLivros.filter { it.autor.startsWith("A") }
+        .sortedBy { it.anoPublic }
+        .imprimeMarcadores()
+
 }
 
 fun List<Livro>.imprimeMarcadores() {
