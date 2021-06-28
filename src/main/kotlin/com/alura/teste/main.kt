@@ -3,20 +3,25 @@ package com.alura.teste
 
 fun main() {
 
-    val minhaFuncao: (Int, Int) -> Int = ::soma
-    println(minhaFuncao(5, 10))
+    val minhaFuncaoLambda: (Int, Int) -> Int = {a, b ->
+        a + b
+    }
 
-    val minhaFuncaoSomaClasse: (Int, Int) -> Int = Teste()
-    println(minhaFuncao(10, 10))
+    println(minhaFuncaoLambda(1, 1))
+
+    val minhaFuncaoAnonima: (Int, Int) -> Int = fun(a, b): Int{
+        return a + b
+    }
+
+    println(minhaFuncaoAnonima(2, 2))
 
 }
 
-fun soma(a: Int, b: Int): Int = a + b
-
+fun teste(a: Int, b: Int): Int = a + b
 
 class Teste : (Int, Int) -> Int {
-
     override fun invoke(p1: Int, p2: Int): Int = p1 + p2
+
 
 }
 
