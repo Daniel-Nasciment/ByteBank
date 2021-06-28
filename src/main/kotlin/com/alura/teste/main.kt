@@ -14,12 +14,7 @@ fun main() {
     val aumento = "1.1".toBigDecimal()
     val salariosComAumento: Array<BigDecimal> =
         salarios.map { salario ->
-            if (salario < "5000".toBigDecimal()){
-                salario + "500".toBigDecimal()
-            }else{
-                    // SETSCALE (QUANRTIDADE DE CASAS, MÉTODO DE ARREDONDAMENTO)
-                (salario * aumento).setScale(2, RoundingMode.UP)
-            }
+            calculaAumento(salario, aumento)
         }.toTypedArray()
 
     println(salariosComAumento.contentToString())
@@ -27,7 +22,17 @@ fun main() {
     //ASSIM COMO NOS TIPOS PRIMITIVOS POSSIMOS COMO POR EXEMPLO UM IntArrayOf
     // NO CASO DO BIG DECIMAL SERIA NECESSÁRIO A CRIAÇÃO DE UM MÉTODO QUE FAÇA O MESMO
 
+    println("${salarios.somatoria()}")
+
 }
+
+private fun calculaAumento(salario: BigDecimal, aumento: BigDecimal) =
+    if (salario < "5000".toBigDecimal()) {
+        salario + "500".toBigDecimal()
+    } else {
+        // SETSCALE (QUANRTIDADE DE CASAS, MÉTODO DE ARREDONDAMENTO)
+        (salario * aumento).setScale(2, RoundingMode.UP)
+    }
 
 // VARARGS RETORNA UM ARRAY COM A QUANTIDADE DE VALORES CONTIDOS
 fun bigDecimalArrayOf(vararg valores: String): Array<BigDecimal> {
@@ -39,6 +44,12 @@ fun bigDecimalArrayOf(vararg valores: String): Array<BigDecimal> {
     }
 }
 
+fun Array<BigDecimal>.somatoria(): BigDecimal{
+
+    return this.reduce { acumulador, valor ->
+        acumulador + valor
+    }
+}
 
 
 
