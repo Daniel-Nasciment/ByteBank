@@ -1,29 +1,22 @@
 package com.alura.teste
 
+import com.alura.modelo.Endereco
+
 
 fun main() {
-
-    // LAMBDA@ É UMA LABEL QUE PODE SER QUAQUER COISA E É UTILIZADO QUANDO PODEMOS
-    // ESPERAR MAIS DE UM RETORNO EM UMA EXPRESSÃO LAMBDA
-    val calculaBonificacao: (salario: Double) -> Double = lambda@{ salario ->
-        if(salario < 1000.0){
-            return@lambda salario + 50.0
-        }
-        return@lambda salario + 100.0
+    val testeFuncao: () -> Unit
+    Endereco().let {
+        it
+    }
+    "".let(::testeRecebeString)
+    1.let {
+        it
     }
 
-    println(calculaBonificacao(100.0))
-
 }
 
-fun teste(a: Int, b: Int): Int = a + b
-
-class Teste : (Int, Int) -> Int {
-    override fun invoke(p1: Int, p2: Int): Int = p1 + p2
-
+fun testeRecebeString(valor: String){
 
 }
-
-
 
 
