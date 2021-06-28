@@ -3,17 +3,16 @@ package com.alura.teste
 
 fun main() {
 
-    val minhaFuncaoLambda: (Int, Int) -> Int = {a, b ->
-        a + b
+    // LAMBDA@ É UMA LABEL QUE PODE SER QUAQUER COISA E É UTILIZADO QUANDO PODEMOS
+    // ESPERAR MAIS DE UM RETORNO EM UMA EXPRESSÃO LAMBDA
+    val calculaBonificacao: (salario: Double) -> Double = lambda@{ salario ->
+        if(salario < 1000.0){
+            return@lambda salario + 50.0
+        }
+        return@lambda salario + 100.0
     }
 
-    println(minhaFuncaoLambda(1, 1))
-
-    val minhaFuncaoAnonima: (Int, Int) -> Int = fun(a, b): Int{
-        return a + b
-    }
-
-    println(minhaFuncaoAnonima(2, 2))
+    println(calculaBonificacao(100.0))
 
 }
 
