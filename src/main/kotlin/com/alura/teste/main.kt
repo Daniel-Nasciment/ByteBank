@@ -3,11 +3,11 @@ package com.alura.teste
 
 fun main() {
 
+    val lista01 = setOf("A", "B", "C")
+    val lista02 = setOf("A", "D", "E")
+    val total = lista01 + lista02
 
- // COLLECTIONS MUTAVEIS TEM UM MÉTODO CHAMADO .DISTINCT()
- // O MESMO É CAPAS DE DISTINGUIR ELEMENTOS IGUAIS DENTRO DE UMA COLEÇÃO, DESSA FORMA ADICIONAR
- // SOMENTE UMA VEZ
-
+    println(total)
 }
 
 
