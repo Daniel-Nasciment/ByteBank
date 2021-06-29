@@ -9,4 +9,10 @@ class Endereco(
             |Endereco(logradouro='$logradouro', 
             |numero=$numero)""".trimMargin()
     }
+
+    fun completo(): String {
+        return """
+        $logradouro, $numero
+        """.trimIndent()
+    }
 }
