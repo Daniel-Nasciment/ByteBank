@@ -20,7 +20,6 @@ abstract class Conta(
     }
 
     init {
-        println("Criando conta")
         Contador.total++
     }
 
